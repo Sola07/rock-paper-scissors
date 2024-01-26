@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        function getComputerChoice() {
+        
+                let randomNumber = Math.floor(Math.random()*3); 
+        switch (randomNumber) {
+        
+                case 0:
+                    return "paper";
+                case 1:
+                    return "rock";
+                case 2:
+                    return "scissors";
+            }
+        }
+        let computerChoice = getComputerChoice();
+        let playerChoice = prompt("Rock, Paper, Scissors?").toLocaleLowerCase();
+        let gamePlay = getGamePlay()
+        
+        function getGamePlay(computerChoice, playerChoice) {
+        
+            if ((computerChoice === "paper") && (playerChoice === "rock")) { 
+                return "You loose! Paper beats the Rock!"
+            } 
+            
+            else if ((computerChoice === "scissors") && (playerChoice === "paper")) {
+                return "You loose! Scissors beats the Paper!"
+            } 
+            
+            else if ((computerChoice === "scissors") && (playerChoice === "scissors")) {
+                return "You loose! Rock beats the Scissors!"
+            } 
+            
+            else if ((computerChoice === "rock") && (playerChoice === "paper")) {
+                return "You win! Paper beats the Rock!"
+            } 
+            
+            else if ((computerChoice === "paper") && (playerChoice === "scissors")) {
+                return "You win! Scissors beats the Paper!"
+            } 
+            
+            else if ((computerChoice === "scissors") && (playerChoice === "rock")) {
+                return "You win! Rock beats the Scissors"
+            } 
+
+            else if (computerChoice === playerChoice) {
+                return "It's tie ! Let's play again!"
+                prompt("It's tie ! Choose again").toLocaleLowerCase();
+            }
+
+            else {
+                return "Please try again!"
+            }
+        }
+        
+        console.log(getGamePlay(computerChoice, playerChoice));
+
+        </script>
+</body>
+</html>
